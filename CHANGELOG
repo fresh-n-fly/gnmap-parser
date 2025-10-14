@@ -1,3 +1,10 @@
+[10/14/2025]
+     Released.: Version 4.0.0
+     Added....: DomainControllers.txt file under Host-Type
+     Fixed....: Printers.txt 1900/tcp to 9100/tcp
+     Fixed....: Condition where similar ports would inaccurately be identified (e.g., 3389/tcp instead of 389/tcp)
+     Modified.: Printers.txt port search for additional common ports
+
 [05/01/2014]
      Released.: Version 3.4.2
      Fixed....: Issue where result outputs included filename.
