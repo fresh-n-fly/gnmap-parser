@@ -1,5 +1,7 @@
 Gnmap-Parser
 ============
+## What's Updated?
+This release is based on the version from 2014, and the base functionality remains untouched. The part that changed is the "Host-Type" functions. Now there's a "DomainControllers.txt" file and the "Printers.txt" is updated with additional printer ports and one of the original regex searches was incorrect, which prevented an accurate list of printers. Finally, the well-known "Parsed-Results" folder has a date-time stamp appended for those times when you're running multiple parsing jobs on a single engagement and need to know when a port was first observed without overwriting folders/files. 
 
 Description
 -----------
