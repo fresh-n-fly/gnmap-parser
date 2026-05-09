@@ -228,6 +228,14 @@ func_parse(){
     rm ${thrdprty}/PeepingTom.txt
   fi
 
+  # Remove Printers from Alive-Hosts files
+  if [ -f ${hosttype}/Printers.txt ]; then
+    echo '[*] Removing Printers from Alive Hosts files'
+    cp ${hosttype}/Printers.txt ${hostldir}/Printers.txt
+    cp ${hostldir}/Alive-Hosts-ICMP.txt ${hostldir}/Alive-Hosts-ICMP-NoPrinters.txt
+    awk 'NR==FNR {ips[$0]; next} !($0 in ips)' ${hostldir}/Printers.txt ${hostldir}/Alive-Hosts-ICMP-NoPrinters.txt > ${hostldir}/raw && mv ${hostldir}/raw ${hostldir}/Alive-Hosts-ICMP-NoPrinters.txt; wc -l ${hostldir}/*
+  fi
+
   # Build PeepingTom Input File
   echo '[*] Building PeepingTom Input File'
   for i in $(cat ${portldir}/TCP-Ports-List.txt); do
